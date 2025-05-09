@@ -12,7 +12,7 @@ export default function HomePage() {
             Guiding You Into the Federal Marketplace
           </h1>
           <p className="text-lg text-gray-700 mb-8">
-            Puget Capture & Acquisitions specializes in helping service-based businesses secure, 
+            Puget Capture & Acquisition specializes in helping service-based businesses secure, 
             manage, and grow federal contracts through GSA Schedules and strategic guidance.
           </p>
           <Button as={Link} href="/contact" size="lg">

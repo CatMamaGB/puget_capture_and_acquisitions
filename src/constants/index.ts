@@ -1,4 +1,4 @@
-export const COMPANY_NAME = 'Puget Capture & Acquisitions';
+export const COMPANY_NAME = 'Puget Capture & Acquisition';
 export const DOMAIN = 'pugetca.com';
 export const CONTACT_EMAIL = {
   BRIANNA: 'bpirro@pugetca.com',

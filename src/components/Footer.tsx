@@ -10,33 +10,22 @@ const CONTACT_INFO = {
 
 export function Footer() {
   return (
-    <footer className="bg-deepNavy text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="font-bold text-lg mb-4">{COMPANY_NAME}</h3>
-            <p className="text-fogGray">Guiding You Into the Federal Marketplace</p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-fogGray">
-              <li>
-                <a href={`mailto:${CONTACT_INFO.brianna}`} className="hover:text-white transition-colors">
-                  {CONTACT_INFO.brianna}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${CONTACT_INFO.josh}`} className="hover:text-white transition-colors">
-                  {CONTACT_INFO.josh}
-                </a>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-[#0c1b39] text-white py-8 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div>
+          <h4 className="font-semibold text-white text-lg">{COMPANY_NAME}</h4>
+          <p className="text-gray-300 mt-2">Simplifying Federal Contracts for Growing Businesses</p>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-fogGray">
-          <p>&copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
+        <div>
+          <h4 className="font-semibold text-white text-lg">Contact Us</h4>
+          <p className="text-gray-300 mt-2">info@pugetca.com</p>
+          <p className="text-gray-300 italic">LinkedIn: Coming Soon</p>
         </div>
       </div>
+      <hr className="my-6 border-gray-600" />
+      <p className="text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
+      </p>
     </footer>
   );
 } 

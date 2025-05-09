@@ -22,19 +22,19 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium mb-2">Brianna Pirro</h3>
                   <a 
-                    href={`mailto:${CONTACT_EMAIL.BRIANNA}`}
+                    href="mailto:info@pugetca.com"
                     className="text-pugetBlue hover:text-deepNavy transition-colors"
                   >
-                    {CONTACT_EMAIL.BRIANNA}
+                    info@pugetca.com
                   </a>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">Josh Houseworth</h3>
                   <a 
-                    href={`mailto:${CONTACT_EMAIL.JOSH}`}
+                    href="mailto:info@pugetca.com"
                     className="text-pugetBlue hover:text-deepNavy transition-colors"
                   >
-                    {CONTACT_EMAIL.JOSH}
+                    info@pugetca.com
                   </a>
                 </div>
               </div>
