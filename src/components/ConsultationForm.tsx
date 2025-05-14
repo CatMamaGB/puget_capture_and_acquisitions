@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/Textarea';
 interface FormData {
   name: string;
   email: string;
-  company?: string;
+  company: string;
   guests?: string;
   message?: string;
 }
