@@ -68,9 +68,8 @@ export default function ConsultationForm() {
         <Label htmlFor="name">Name *</Label>
         <Input
           id="name"
-          label="Name"
           required
-          value={formData.name}
+          value={formData.name ?? ''}
           onChange={(e) => handleInputChange(e, 'name')}
         />
       </div>
@@ -81,7 +80,7 @@ export default function ConsultationForm() {
           id="email"
           type="email"
           required
-          value={formData.email}
+          value={formData.email ?? ''}
           onChange={(e) => handleInputChange(e, 'email')}
         />
       </div>
