@@ -22,35 +22,41 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg mx-auto px-4 md:px-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="firstName">First Name</Label>
+          <Input
+            type="text"
+            id="firstName"
+            value={formData.name ?? ''}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full"
+            required
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input
+            type="text"
+            id="lastName"
+            value={formData.name ?? ''}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full"
+            required
+          />
+        </div>
+      </div>
+      
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
         <Input
-          label="First Name"
-          type="text"
-          id="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full"
-          required
-        />
-        <Input
-          label="Last Name"
-          type="text"
-          id="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          type="email"
+          id="email"
+          value={formData.email ?? ''}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           className="w-full"
           required
         />
       </div>
-      
-      <Input
-        label="Email"
-        type="email"
-        id="email"
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        className="w-full"
-        required
-      />
       
       <div className="space-y-2">
         <Label htmlFor="message">Message</Label>
@@ -59,7 +65,7 @@ export function ContactForm() {
           value={formData.message ?? ''}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           rows={4}
-          className="mt-1 block w-full"
+          className="w-full"
           required
         />
       </div>
