@@ -86,7 +86,7 @@ export default function ConsultationForm() {
         <Label htmlFor="company">Company (Optional)</Label>
         <Input
           id="company"
-          value={formData.company}
+          value={formData.company || ''}
           onChange={(e) => handleInputChange(e, 'company')}
         />
       </div>
@@ -95,7 +95,7 @@ export default function ConsultationForm() {
         <Label htmlFor="guests">Additional Guests (Optional)</Label>
         <Input
           id="guests"
-          value={formData.guests}
+          value={formData.guests || ''}
           onChange={(e) => handleInputChange(e, 'guests')}
         />
       </div>
@@ -104,7 +104,7 @@ export default function ConsultationForm() {
         <Label htmlFor="message">Message (Optional)</Label>
         <Textarea
           id="message"
-          value={formData.message}
+          value={formData.message || ''}
           onChange={(e) => handleInputChange(e, 'message')}
         />
       </div>
