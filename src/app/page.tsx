@@ -1,25 +1,80 @@
 import React from 'react';
-import { Section } from '@/components/ui/Section';
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
+import { CheckIcon } from '@heroicons/react/24/solid'
+import Script from 'next/script'
 
 export default function HomePage() {
   return (
     <>
-      <Section className="bg-gradient-to-b from-white to-fogGray">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-deepNavy mb-6">
-            Guiding You Into the Federal Marketplace
-          </h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Puget Capture & Acquisitions specializes in helping service-based businesses secure, 
-            manage, and grow federal contracts through GSA Schedules and strategic guidance.
-          </p>
-          <Button as={Link} href="/contact" size="lg">
-            Let's Get Started
-          </Button>
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Your Company Name",
+            "description": "Federal consulting services provider",
+            "url": "https://your-domain.com",
+            "logo": "https://your-domain.com/images/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-XXX-XXX-XXXX",
+              "contactType": "customer service",
+              "email": "contact@your-domain.com"
+            }
+          })
+        }}
+      />
+      <main>
+        <div className="w-full">
+          {/* Hero Section */}
+          <section 
+            className="relative w-full bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/images/hero-background.png)'
+            }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-30" />
+            <Container>
+              <div className="py-12 md:py-20">
+                <div className="text-center relative z-10">
+                  <div className="backdrop-blur-sm bg-black/20 px-6 py-4 rounded-lg max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-white mb-6">
+                      Guiding You Through the Federal Marketplace with Clarity and Confidence
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
+                      We help companies confidently navigate the complexities of federal contracts, 
+                      from GSA onboarding to contract management and long-term success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          {/* CTA Section */}
+          <section className="w-full bg-blue-50">
+            <Container>
+              <div className="py-16 text-center">
+                <h2 className="text-3xl font-bold mb-4">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-xl mb-8">
+                  Book a free consultation with our GSA contract experts to assess your readiness.
+                </p>
+                <Link 
+                  href="/free-consultation"
+                  className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  Schedule Free Consultation
+                </Link>
+              </div>
+            </Container>
+          </section>
         </div>
-      </Section>
+      </main>
     </>
   );
 } 

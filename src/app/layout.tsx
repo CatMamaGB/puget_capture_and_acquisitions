@@ -2,43 +2,28 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { siteMetadata } from '@/config/metadata';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
 import '@/styles/globals.css';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
+  metadataBase: new URL('https://your-domain.com'),
   title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
+    default: 'Your Company Name | Professional Services',
+    template: '%s | Your Company Name'
   },
-  description: siteMetadata.description,
+  description: 'Professional consulting services specializing in federal advisory, GSA schedule, and contract management',
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: siteMetadata.siteUrl,
-    siteName: siteMetadata.title,
-    images: [
-      {
-        url: siteMetadata.ogImage,
-        width: 1200,
-        height: 630,
-      },
-    ],
+    title: 'Your Company Name',
+    description: 'Professional consulting services',
+    type: 'website'
   },
   robots: {
     index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+    follow: true
+  }
 };
 
 export default function RootLayout({
@@ -47,11 +32,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className={inter.className}>
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-blue-600"
+        >
+          Skip to main content
+        </a>
+        <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
+          <Header />
+          <main id="main-content" className="flex-grow w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              {children}
+            </div>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

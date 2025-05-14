@@ -3,8 +3,8 @@ import { Service } from '@/types';
 export const services: Service[] = [
   {
     id: 'gsa-schedule',
-    title: 'GSA Schedule Acquisition',
-    description: 'Full MAS proposal support and guidance through the acquisition process.',
+    title: 'Obtaining a GSA Schedule',
+    description: 'Full proposal support and guidance through the acquisition process.',
     benefits: [
       'End-to-end proposal development',
       'Documentation review',
@@ -14,7 +14,7 @@ export const services: Service[] = [
   },
   {
     id: 'contract-management',
-    title: 'Contract Management',
+    title: 'Federal Contract Management',
     description: 'Ongoing support for contract compliance and maintenance.',
     benefits: [
       'Regular compliance audits',
@@ -25,7 +25,7 @@ export const services: Service[] = [
   },
   {
     id: 'strategic-advisory',
-    title: 'Strategic Federal Advisory',
+    title: 'Strategic Federal Advisory Services',
     description: 'Expert guidance for long-term federal market success.',
     benefits: [
       'Market research',
