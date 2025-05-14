@@ -64,6 +64,7 @@ export default function ConsultationForm() {
         <Label htmlFor="name">Name *</Label>
         <Input
           id="name"
+          label="Name"
           required
           value={formData.name}
           onChange={(e) => handleInputChange(e, 'name')}
