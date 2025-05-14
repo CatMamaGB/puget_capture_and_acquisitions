@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/Textarea';
 interface FormData {
   name: string;
   email: string;
-  company: string;
+  company?: string;
   guests?: string;
   message?: string;
 }
@@ -86,7 +86,7 @@ export default function ConsultationForm() {
         <Label htmlFor="company">Company (Optional)</Label>
         <Input
           id="company"
-          value={formData.company || ''}
+          value={formData.company ?? ''}
           onChange={(e) => handleInputChange(e, 'company')}
         />
       </div>
