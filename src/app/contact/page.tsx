@@ -8,39 +8,32 @@ import { CONTACT_EMAIL } from '@/constants';
 export default function ContactPage() {
   return (
     <>
-      <Section className="bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-deepNavy mb-8 text-center">Contact Us</h1>
-          <p className="text-lg text-gray-700 mb-12 text-center">
+      <Section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h1 className="text-5xl font-bold text-deepNavy mb-6 text-center">Contact Us</h1>
+          <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
             Ready to explore federal contracting opportunities? Get in touch with our team.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             <div>
-              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Reach Out Directly</h2>
+              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Contact Our Team</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium mb-2">Brianna Pirro</h3>
                   <a 
                     href="mailto:info@pugetca.com"
-                    className="text-pugetBlue hover:text-deepNavy transition-colors"
+                    className="text-pugetBlue hover:text-deepNavy transition-colors text-lg"
                   >
                     info@pugetca.com
                   </a>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">Josh Houseworth</h3>
-                  <a 
-                    href="mailto:info@pugetca.com"
-                    className="text-pugetBlue hover:text-deepNavy transition-colors"
-                  >
-                    info@pugetca.com
-                  </a>
+                  <p className="text-gray-600 mt-2">
+                    We typically respond within 24 business hours.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div>
+            <div className="bg-gray-50 p-8 rounded-xl shadow-md">
               <h2 className="text-2xl font-semibold text-deepNavy mb-4">Send Us a Message</h2>
               <ContactForm />
             </div>
