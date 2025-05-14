@@ -2,7 +2,7 @@ import * as React from "react";
 import { ChangeEvent } from "react";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
   error?: string;
   id: string;
   required?: boolean;
