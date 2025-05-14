@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/Button';
 import { Input } from './ui/Input';
 import { Textarea } from './ui/Textarea';
+import { Label } from '@/components/ui/Label';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -51,15 +52,17 @@ export function ContactForm() {
         required
       />
       
-      <Textarea
-        label="Message"
-        id="message"
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        rows={4}
-        className="w-full"
-        required
-      />
+      <div className="space-y-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          value={formData.message ?? ''}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          rows={4}
+          className="mt-1 block w-full"
+          required
+        />
+      </div>
       
       <Button type="submit" className="w-full md:w-auto">
         Send Message
