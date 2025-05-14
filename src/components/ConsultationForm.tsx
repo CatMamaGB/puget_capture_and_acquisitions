@@ -19,9 +19,9 @@ export default function ConsultationForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    company: '',
-    guests: '',
-    message: '',
+    company: undefined,
+    guests: undefined,
+    message: undefined
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,6 +41,10 @@ export default function ConsultationForm() {
 
       if (!response.ok) throw new Error(data.error || 'Failed to book consultation');
       
+      if (!data.schedulingUrl) {
+        throw new Error('No scheduling URL provided');
+      }
+
       // Redirect to Calendly scheduling page
       window.location.href = data.schedulingUrl;
     } catch (error) {
@@ -95,7 +99,7 @@ export default function ConsultationForm() {
         <Label htmlFor="guests">Additional Guests (Optional)</Label>
         <Input
           id="guests"
-          value={formData.guests || ''}
+          value={formData.guests ?? ''}
           onChange={(e) => handleInputChange(e, 'guests')}
         />
       </div>
@@ -104,7 +108,7 @@ export default function ConsultationForm() {
         <Label htmlFor="message">Message (Optional)</Label>
         <Textarea
           id="message"
-          value={formData.message || ''}
+          value={formData.message ?? ''}
           onChange={(e) => handleInputChange(e, 'message')}
         />
       </div>
