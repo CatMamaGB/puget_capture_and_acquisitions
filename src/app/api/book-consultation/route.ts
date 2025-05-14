@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import axios from 'axios';
 
 export async function POST(request: Request) {
   try {
@@ -14,28 +13,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // First, get the user's scheduling link
-    const scheduleResponse = await axios.get(
-      'https://api.calendly.com/scheduling_links',
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.CALENDLY_API_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-
-    // Return the scheduling URL to the client
+    // Return the direct Calendly URL
     return NextResponse.json({
-      success: true,
-      schedulingUrl: scheduleResponse.data.resource.booking_url,
-      message: 'Please proceed to schedule your consultation',
+      schedulingUrl: 'https://calendly.com/bpirro-pugetca'
     });
-
   } catch (error) {
-    console.error('Calendly API error:', error);
+    console.error('Booking consultation error:', error);
     return NextResponse.json(
-      { error: 'Failed to initialize scheduling' },
+      { error: 'Failed to process consultation request' },
       { status: 500 }
     );
   }
