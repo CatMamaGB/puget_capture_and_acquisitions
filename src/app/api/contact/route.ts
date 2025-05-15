@@ -5,6 +5,7 @@ export async function POST(req: Request) {
   try {
     const { firstName, lastName, email, message } = await req.json();
 
+    // Create transporter with OAuth2
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -13,11 +14,22 @@ export async function POST(req: Request) {
       },
     });
 
-    await transporter.verify();
+    // Test the connection
+    try {
+      await transporter.verify();
+      console.log('SMTP connection verified');
+    } catch (error) {
+      console.error('SMTP verification failed:', error);
+      throw error;
+    }
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "info@pugetca.com",
+      from: {
+        name: `${firstName} ${lastName}`,
+        address: process.env.EMAIL_USER as string
+      },
+      to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       text: `
         Name: ${firstName} ${lastName}

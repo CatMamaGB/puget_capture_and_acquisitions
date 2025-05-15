@@ -10,8 +10,8 @@ export default function AboutPage() {
       <Section className="bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <h1 className="text-4xl font-bold text-deepNavy mb-6">About Us</h1>
-            <p className="text-lg text-gray-700">
+            <h1 className="text-4xl font-bold text-deepNavy mb-6 text-left md:text-left">About Us</h1>
+            <p className="text-lg text-gray-700 text-center md:text-left">
               Puget Capture & Acquisition is a boutique consulting firm built to help small and 
               mid-sized service-based businesses navigate the complex world of federal contracting 
               with clarity and confidence. We specialize in GSA Schedule acquisition, compliance 
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-deepNavy mb-8">Who We Are</h2>
+            <h2 className="text-2xl font-semibold text-deepNavy mb-8 text-center md:text-left">Who We Are</h2>
             <div className="space-y-12">
               <div className="bg-fogGray bg-opacity-5 p-8 rounded-lg">
                 <div className="flex flex-col md:flex-row gap-8">
@@ -33,9 +33,9 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="md:w-2/3">
-                    <h3 className="text-xl font-semibold mb-3">Josh Houseworth</h3>
-                    <p className="text-evergreen font-medium mb-4">Co-Founder & Federal Acquisition Expert</p>
-                    <div className="space-y-4 text-gray-700">
+                    <h3 className="text-xl font-semibold mb-3 text-center md:text-left">Josh Houseworth</h3>
+                    <p className="text-evergreen font-medium mb-4 text-center md:text-left">Co-Founder & Federal Acquisition Expert</p>
+                    <div className="space-y-4 text-gray-700 text-center md:text-left">
                       <p>
                         With over 15 years of federal contracting experience, Josh is a leading authority in Multi-Agency Contracts (MACs), GSA Schedules, DoD acquisition, and proposal strategy. He has worked both inside and outside the system, including tenure with the GSA itself — giving him a unique understanding of what it takes to build winning proposals and navigate complex acquisitions.
                       </p>
@@ -57,9 +57,9 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="md:w-2/3">
-                    <h3 className="text-xl font-semibold mb-3">Brianna Pirro</h3>
-                    <p className="text-evergreen font-medium mb-4">Co-Founder & Small Business Strategist</p>
-                    <div className="space-y-4 text-gray-700">
+                    <h3 className="text-xl font-semibold mb-3 text-center md:text-left">Brianna Pirro</h3>
+                    <p className="text-evergreen font-medium mb-4 text-center md:text-left">Co-Founder & Small Business Strategist</p>
+                    <div className="space-y-4 text-gray-700 text-center md:text-left">
                       <p>
                         Brianna brings a decade of hands-on experience supporting small and medium-sized 
                         businesses across industries — from consumer goods to digital marketing. With a 
@@ -80,8 +80,8 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-deepNavy mb-4">Why "Puget"?</h2>
-            <p className="text-gray-700">
+            <h2 className="text-2xl font-semibold text-deepNavy mb-4 text-center md:text-left">Why "Puget"?</h2>
+            <p className="text-gray-700 text-center md:text-left">
               Inspired by the Puget Sound region, our brand reflects clarity, depth, and steady 
               movement — just like the clients we serve. We believe in straight talk, thorough 
               preparation, and building systems that last.

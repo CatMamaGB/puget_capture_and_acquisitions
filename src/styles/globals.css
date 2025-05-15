@@ -64,4 +64,47 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Calendly specific styles */
+.calendly-inline-widget,
+.calendly-inline-widget iframe,
+.calendly-inline-widget > div {
+  position: relative;
+  min-width: 320px;
+  height: 1000px;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove focus outline specifically */
+.calendly-inline-widget:focus,
+.calendly-inline-widget:focus-within,
+.calendly-inline-widget iframe:focus,
+.calendly-inline-widget > div:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove any focus rings */
+.calendly-inline-widget * {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-width: 0 !important;
+}
+
+/* Calendly Widget Styling */
+.calendly-inline-widget {
+  min-height: 850px !important;
+}
+
+/* Ensure the widget is responsive on mobile */
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    min-height: 700px !important;
+  }
 } 

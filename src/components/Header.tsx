@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { IMAGES } from '@/config/images';
 
 const navigation = [
   { name: 'About', href: '/about' },
@@ -21,13 +22,11 @@ export function Header() {
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className="relative w-[280px] sm:w-[500px] h-[70px] sm:h-[120px]">
-              <Image 
+            <div className="w-[280px] sm:w-[500px] h-[70px] sm:h-[120px]">
+              <img 
                 src="/images/logo-horizontal.png"
                 alt="Puget Capture & Acquisition"
-                fill
-                priority
-                className="object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
           </Link>

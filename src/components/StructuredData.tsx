@@ -1,4 +1,4 @@
-import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE } from '@/constants';
+import { ReactNode } from 'react';
 
 export function ServiceStructuredData({ 
   name, 
@@ -6,7 +6,7 @@ export function ServiceStructuredData({
 }: { 
   name: string; 
   description: string; 
-}) {
+}): ReactNode {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -14,10 +14,13 @@ export function ServiceStructuredData({
     description,
     provider: {
       '@type': 'Organization',
-      name: COMPANY_NAME,
-      email: CONTACT_EMAIL,
-      telephone: CONTACT_PHONE,
+      name: 'Puget Capture & Acquisition',
+      email: 'info@pugetca.com',
+      url: 'https://www.pugetca.com',
     },
+    url: 'https://www.pugetca.com/free-consultation',
+    areaServed: 'United States',
+    serviceType: 'GSA Contract Consultation'
   };
 
   return (
