@@ -1,11 +1,9 @@
 export const COMPANY_NAME = 'Puget Capture & Acquisition';
 export const DOMAIN = 'pugetca.com';
-export const CONTACT_EMAIL = {
-  BRIANNA: 'bpirro@pugetca.com',
-  JOSH: 'jhouseworth@pugetca.com'
-};
-
-export const CONTACT_PHONE = '(555) 123-4567';
+export const CONTACT_EMAIL = 'info@pugetca.com';
+export const CONTACT_PHONE = undefined; // Add phone if available
+export const COMPANY_URL = 'https://pugetca.com';
+export const COMPANY_DESCRIPTION = 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.';
 
 export const NAVIGATION = [
   { name: 'Home', href: '/' },

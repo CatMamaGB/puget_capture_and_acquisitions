@@ -1,11 +1,18 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { CalendlyScript } from '@/components/CalendlyScript';
 import '@/styles/globals.css';
+import { Navbar } from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Puget Capture & Acquisition | Federal Contracting Experts',
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.ico',
-  }
+  },
 };
 
 export default function RootLayout({
@@ -49,8 +56,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <CalendlyScript />
+      </head>
       <body className={inter.className}>
-        <Navigation />
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
