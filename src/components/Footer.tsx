@@ -79,7 +79,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li><Link href="/services#gsa-schedule" className="text-gray-400 hover:text-white transition-colors">GSA Schedule</Link></li>
                 <li><Link href="/services#contract-management" className="text-gray-400 hover:text-white transition-colors">Contract Management</Link></li>
-                <li><Link href="/services#consulting" className="text-gray-400 hover:text-white transition-colors">Consulting</Link></li>
+                <li><Link href="/services#federal-advisory" className="text-gray-400 hover:text-white transition-colors">Federal Advisory</Link></li>
               </ul>
             </div>
           </div>
