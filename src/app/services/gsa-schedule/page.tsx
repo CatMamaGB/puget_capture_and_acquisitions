@@ -32,14 +32,14 @@ export default function GSASchedulePage() {
               "name": "How long does the GSA Schedule process take?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Typically 4-6 months from preparation to award, depending on complexity and your organization's readiness. Our expertise helps streamline the process."
+                "text": "Typically 3-6 months from preparation to award, depending on complexity and your organization's readiness. Our expertise helps streamline the process."
               }
             }, {
               "@type": "Question",
               "name": "What are the eligibility requirements?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Two years of business history and strong financial health are basic requirements. We'll help you assess your readiness and prepare documentation."
+                "text": "Generally, two years of business history and strong financial health are basic requirements. We'll help you assess your readiness and prepare documentation."
               }
             }]
           })
@@ -109,7 +109,7 @@ export default function GSASchedulePage() {
                 How long does the GSA Schedule process take?
               </h3>
               <p className="text-lg text-gray-700">
-                Typically 4-6 months from preparation to award, depending on complexity and 
+                Typically 3-6 months from preparation to award, depending on complexity and 
                 your organization's readiness. Our expertise helps streamline the process.
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function GSASchedulePage() {
                 What are the eligibility requirements?
               </h3>
               <p className="text-lg text-gray-700">
-                Two years of business history and strong financial health are basic requirements. 
+                Generally, two years of business history and strong financial health are basic requirements. 
                 We'll help you assess your readiness and prepare documentation.
               </p>
             </div>

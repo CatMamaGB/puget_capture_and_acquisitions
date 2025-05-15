@@ -33,7 +33,7 @@ export default function FederalAdvisoryPage() {
             "description": "Expert federal advisory services helping organizations navigate complex federal regulations and requirements.",
             "provider": {
               "@type": "Organization",
-              "name": "Your Company Name"
+              "name": "Puget Capture & Acquisition"
             },
             "serviceType": "Federal Consulting",
             "areaServed": "United States"

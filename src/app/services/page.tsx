@@ -44,7 +44,7 @@ export default function ServicesPage() {
       icon: <IconClipboardCheck size={32} />,
     },
     {
-      title: 'Strategic Federal Advisory',
+      title: 'Federal Advisory Services',
       description: 'Strategic guidance for success in the federal marketplace. Make informed decisions and capture the right opportunities for your business.',
       href: '/services/federal-advisory',
       icon: <IconCompass size={32} />,

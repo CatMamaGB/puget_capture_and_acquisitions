@@ -30,10 +30,10 @@ export default function ContractManagementPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Contract Management Services",
-            "description": "Comprehensive contract management services for federal contractors, ensuring compliance and optimal performance.",
+            "description": "Professional federal contract management services.",
             "provider": {
               "@type": "Organization",
-              "name": "Your Company Name"
+              "name": "Puget Capture & Acquisition"
             },
             "serviceType": "Contract Management",
             "areaServed": "United States"
