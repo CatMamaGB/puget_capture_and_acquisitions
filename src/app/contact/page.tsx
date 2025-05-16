@@ -42,8 +42,13 @@ export default function ContactPage() {
             Ready to explore federal contracting opportunities? Get in touch with our team.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-            <div>
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-start mt-12">
+            <div className="bg-gray-50 p-8 rounded-xl shadow-md flex-1 max-w-2xl">
+              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Send Us a Message</h2>
+              <ContactForm />
+            </div>
+
+            <div className="md:w-64">
               <h2 className="text-2xl font-semibold text-deepNavy mb-4">Contact Our Team</h2>
               <div className="space-y-4">
                 <div>
@@ -58,11 +63,6 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Send Us a Message</h2>
-              <ContactForm />
             </div>
           </div>
         </div>

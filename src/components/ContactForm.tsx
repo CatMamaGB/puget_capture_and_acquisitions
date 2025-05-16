@@ -42,8 +42,8 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-6 w-full">
+      <div className="space-y-4">
         <div>
           <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
           <input
@@ -52,7 +52,7 @@ export function ContactForm() {
             value={formData.firstName}
             onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
             required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
           />
         </div>
         <div>
@@ -63,7 +63,7 @@ export function ContactForm() {
             value={formData.lastName}
             onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
             required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
           />
         </div>
       </div>
@@ -76,7 +76,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
         />
       </div>
 
@@ -87,8 +87,8 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           required
-          rows={4}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          rows={6}
+          className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
         />
       </div>
 
@@ -103,7 +103,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
+        className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 text-lg"
       >
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>
