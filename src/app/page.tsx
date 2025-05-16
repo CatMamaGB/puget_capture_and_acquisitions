@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Container } from '@/components/ui/Container';
 import { CheckIcon } from '@heroicons/react/24/solid'
-import Script from 'next/script'
 
 export default function HomePage() {
   return (
@@ -42,11 +42,10 @@ export default function HomePage() {
                 <div className="text-center relative z-10">
                   <div className="backdrop-blur-sm bg-black/20 px-6 py-4 rounded-lg max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-white mb-6">
-                      Guiding You Through the Federal Marketplace with Clarity and Confidence
+                      Guiding You Through the Federal Marketplace
                     </h1>
                     <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
-                      We help companies confidently navigate the complexities of federal contracts, 
-                      from GSA onboarding to contract management and long-term success.
+                      We help companies navigate federal contracts
                     </p>
                   </div>
                 </div>

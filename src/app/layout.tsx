@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { CalendlyScript } from '@/components/CalendlyScript';
 import '@/styles/globals.css';
 import { Navbar } from '@/components/Navbar';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -58,6 +59,18 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <CalendlyScript />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FSFBG0LJPH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FSFBG0LJPH');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <Navbar />
