@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Container } from '@/components/ui/Container';
 import { CheckIcon } from '@heroicons/react/24/solid'
+import Services from '@/components/Services'
 
 export default function HomePage() {
   return (
@@ -27,6 +28,12 @@ export default function HomePage() {
         }}
       />
       <main>
+        <div className="bg-blue-600 p-4 text-white text-center">
+          <Link href="/free-consultation" className="flex items-center justify-center space-x-2 hover:underline">
+            <span className="text-lg font-semibold">Book Your Free Consultation Today!</span>
+            <span className="text-xl">→</span>
+          </Link>
+        </div>
         <div className="w-full">
           {/* Hero Section */}
           <section 
@@ -44,13 +51,15 @@ export default function HomePage() {
                       Guiding You Through the Federal Marketplace
                     </h1>
                     <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
-                      We help companies navigate federal contracts
+                    Backed by 15+ years of acquisition expertise, we streamline the entire process—from capture strategy to post-award support.
                     </p>
                   </div>
                 </div>
               </div>
             </Container>
           </section>
+
+          <Services />
 
           {/* CTA Section */}
           <section className="w-full bg-blue-50">
@@ -60,7 +69,7 @@ export default function HomePage() {
                   Ready to Get Started?
                 </h2>
                 <p className="text-xl mb-8">
-                  Book a free consultation with our GSA contract experts to assess your readiness.
+                  Book a free consultation with our federal acquisition experts to assess your readiness.
                 </p>
                 <Link 
                   href="/free-consultation"

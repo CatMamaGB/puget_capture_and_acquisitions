@@ -20,7 +20,9 @@ export function Breadcrumbs() {
           const href = `/${paths.slice(0, index + 1).join('/')}`
           const isLast = index === paths.length - 1
           const title = path.split('-').map(word => 
-            word.charAt(0).toUpperCase() + word.slice(1)
+            word.toLowerCase() === 'gsa' 
+              ? 'GSA'
+              : word.charAt(0).toUpperCase() + word.slice(1)
           ).join(' ')
           
           return (

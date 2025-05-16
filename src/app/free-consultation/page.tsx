@@ -15,10 +15,9 @@ const CalendlyWidget = dynamic(
 );
 
 const consultationBenefits = [
-  'Assess your business readiness',
-  'Get personalized guidance from GSA experts',
-  'Understand the complete GSA contract process',
-  'Learn about required documentation and next steps'
+  'Assessing your readiness to work with the federal government',
+  'Identifying relevant federal opportunities in your industry',
+  'Exploring how to partner with GSA and other federal agencies',
 ];
 
 export default function ConsultationPage() {
@@ -34,11 +33,11 @@ export default function ConsultationPage() {
           {/* Header Section */}
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Is Your Business Ready for a GSA Contract?
+              Is Your Business Ready for a Federal Contract?
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Schedule a free 30-minute consultation with our experts to get personalized guidance 
-              and determine if your business is ready for a GSA Schedule contract.
+            Schedule a free 30-minute consultation with our federal acquisition experts.
+            Get personalized guidance tailored to your business goals, including:
             </p>
           </div>
 
