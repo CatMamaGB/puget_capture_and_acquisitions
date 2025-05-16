@@ -1,11 +1,38 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
 import { CONTACT_EMAIL } from '@/constants';
 
 export default function ContactPage() {
+  const [error, setError] = useState('');
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // your form data
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+      
+      // Handle success
+    } catch (err) {
+      setError('Failed to send message. Please try again later.');
+    }
+  };
+  
   return (
     <>
       <Section className="bg-white py-20">

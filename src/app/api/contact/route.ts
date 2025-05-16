@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    const { firstName, lastName, email, message } = await req.json();
+    const { firstName, lastName, email, message } = await request.json();
 
-    // Create transporter with OAuth2
+    // Create transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -14,20 +14,17 @@ export async function POST(req: Request) {
       },
     });
 
-    // Test the connection
-    try {
-      await transporter.verify();
-      console.log('SMTP connection verified');
-    } catch (error) {
-      console.error('SMTP verification failed:', error);
-      throw error;
-    }
+    // Log for debugging
+    console.log('Attempting to send email with config:', {
+      from: process.env.EMAIL_USER,
+      auth: {
+        user: process.env.EMAIL_USER,
+        // password hidden for security
+      }
+    });
 
     const mailOptions = {
-      from: {
-        name: `${firstName} ${lastName}`,
-        address: process.env.EMAIL_USER as string
-      },
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
@@ -44,14 +41,31 @@ export async function POST(req: Request) {
       `,
     };
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Message sent: %s', info.messageId);
+    try {
+      // Verify connection
+      await transporter.verify();
+      console.log('SMTP connection verified');
+      
+      // Send email
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Message sent:', info.messageId);
+      
+      return NextResponse.json({ 
+        success: true,
+        message: 'Email sent successfully'
+      });
+    } catch (emailError) {
+      console.error('Email error:', emailError);
+      throw emailError;
+    }
 
-    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Failed to send email:', error);
+    console.error('API error:', error);
     return NextResponse.json(
-      { error: 'Failed to send message' },
+      { 
+        error: 'Failed to send message',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }

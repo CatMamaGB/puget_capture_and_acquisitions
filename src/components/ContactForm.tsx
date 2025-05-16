@@ -1,30 +1,21 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { Input } from './ui/Input';
-import { Textarea } from './ui/Textarea';
-import { Label } from '@/components/ui/Label';
-
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-}
+import { useState } from 'react';
 
 export function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
+    setStatus('loading');
+    setError('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -35,93 +26,87 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
 
       setStatus('success');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error sending message:', error);
+      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    } catch (err) {
+      console.error('Form submission error:', err);
       setStatus('error');
+      setError('Failed to send message. Please try again later.');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg mx-auto px-4 md:px-0">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="firstName">First Name</Label>
-          <Input
+          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
+          <input
             type="text"
             id="firstName"
-            name="firstName"
             value={formData.firstName}
-            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-            className="w-full"
+            onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
             required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
         <div>
-          <Label htmlFor="lastName">Last Name</Label>
-          <Input
+          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
+          <input
             type="text"
             id="lastName"
-            name="lastName"
             value={formData.lastName}
-            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-            className="w-full"
+            onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
             required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
       </div>
       
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+        <input
           type="email"
           id="email"
-          value={formData.email ?? ''}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full"
+          value={formData.email}
+          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
         />
       </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+        <textarea
           id="message"
-          value={formData.message ?? ''}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          rows={4}
-          className="w-full"
+          value={formData.message}
+          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           required
+          rows={4}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
         />
       </div>
-      
-      {status === 'success' && (
-        <div className="text-green-600 text-sm">
-          Message sent successfully! We'll get back to you soon.
-        </div>
-      )}
-      
-      {status === 'error' && (
-        <div className="text-red-600 text-sm">
-          Failed to send message. Please try again later.
-        </div>
+
+      {error && (
+        <div className="text-red-600 text-sm">{error}</div>
       )}
 
-      <Button 
-        type="submit" 
-        className="w-full md:w-auto"
-        disabled={status === 'submitting'}
+      {status === 'success' && (
+        <div className="text-green-600 text-sm">Message sent successfully!</div>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
       >
-        {status === 'submitting' ? 'Sending...' : 'Send Message'}
-      </Button>
+        {status === 'loading' ? 'Sending...' : 'Send Message'}
+      </button>
     </form>
   );
 } 
