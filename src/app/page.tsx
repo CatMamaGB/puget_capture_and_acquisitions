@@ -14,15 +14,14 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Your Company Name",
+            "name": "Puget Capture & Acquisition",
             "description": "Federal consulting services provider",
-            "url": "https://your-domain.com",
-            "logo": "https://your-domain.com/images/logo.png",
+            "url": "https://www.pugetca.com",
+            "logo": "https://www.pugetca.com/images/logo-icon.png",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+1-XXX-XXX-XXXX",
               "contactType": "customer service",
-              "email": "contact@your-domain.com"
+              "email": "info@pugetca.com"
             }
           })
         }}
