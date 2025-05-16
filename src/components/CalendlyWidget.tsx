@@ -2,13 +2,19 @@
 
 import { InlineWidget } from 'react-calendly';
 
-export default function CalendlyWidget() {
+export function CalendlyWidget() {
   return (
-    <InlineWidget 
-      url="https://calendly.com/pugetca/30min" 
-      styles={{
-        height: '850px'
-      }}
-    />
+    <div className="calendly-inline-widget" style={{ minHeight: '700px' }}>
+      <InlineWidget
+        url="https://calendly.com/your-calendly-url"  // Replace with your actual Calendly URL
+        styles={{
+          height: '700px',
+          width: '100%',
+        }}
+      />
+    </div>
   );
-} 
+}
+
+// Add a default export as well
+export default CalendlyWidget; 

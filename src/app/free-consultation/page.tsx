@@ -1,35 +1,18 @@
-import { Metadata } from 'next';
+'use client';
+
 import { CheckCircle } from 'lucide-react';
 import { ServiceStructuredData } from '@/components/StructuredData';
-import { COMPANY_NAME, COMPANY_URL } from '@/constants';
+import { COMPANY_NAME } from '@/constants';
 import dynamic from 'next/dynamic';
 
-// Dynamically import Calendly component with ssr disabled
+// Update the dynamic import
 const CalendlyWidget = dynamic(
   () => import('@/components/CalendlyWidget'),
-  { ssr: false }
-);
-
-export const metadata: Metadata = {
-  title: `Free GSA Contract Consultation | ${COMPANY_NAME}`,
-  description: 'Schedule a free 30-minute consultation with our GSA contract experts to assess your business readiness and get personalized guidance.',
-  openGraph: {
-    title: `Free GSA Contract Consultation | ${COMPANY_NAME}`,
-    description: 'Schedule a free 30-minute consultation with our GSA contract experts to assess your business readiness and get personalized guidance.',
-    type: 'website',
-    url: `${COMPANY_URL}/free-consultation`,
-    siteName: COMPANY_NAME,
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Free GSA Contract Consultation | ${COMPANY_NAME}`,
-    description: 'Schedule a free 30-minute consultation with our GSA contract experts.',
-  },
-  alternates: {
-    canonical: `${COMPANY_URL}/free-consultation`
+  { 
+    loading: () => <p>Loading calendar...</p>,
+    ssr: false
   }
-};
+);
 
 const consultationBenefits = [
   'Assess your business readiness',
