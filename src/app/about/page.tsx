@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Section className="bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <h1 className="text-4xl font-bold text-deepNavy mb-6 text-left md:text-left">About Us</h1>
+            <h1 className="text-4xl font-bold text-deepNavy mb-6 text-center md:text-left">About Us</h1>
             <p className="text-lg text-gray-700 text-center md:text-left">
               Puget Capture & Acquisition is a boutique consulting firm built to help small and 
               mid-sized service-based businesses navigate the complex world of federal contracting 

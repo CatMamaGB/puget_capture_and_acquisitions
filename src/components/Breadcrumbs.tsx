@@ -6,7 +6,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/solid'
 
 export function Breadcrumbs() {
   const pathname = usePathname()
-  const paths = pathname.split('/').filter(path => path)
+  const paths = pathname?.split('/').filter(path => path) ?? []
   
   return (
     <nav aria-label="Breadcrumb" className="py-4">
