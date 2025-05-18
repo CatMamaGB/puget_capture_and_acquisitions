@@ -73,10 +73,25 @@ export default function RootLayout({
             gtag('config', 'G-FSFBG0LJPH');
           `}
         </Script>
+        
+        {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" type="image/png" />
+        
+        {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="PCA" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Microsoft Tile */}
+        <meta name="msapplication-TileColor" content="#5489a9" />
+        <meta name="msapplication-TileImage" content="/images/favicon-144x144.png" />
+        <meta name="theme-color" content="#5489a9" />
       </head>
       <body className={inter.className}>
         <Navbar />
