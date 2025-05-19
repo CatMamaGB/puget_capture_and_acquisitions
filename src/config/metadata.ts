@@ -1,15 +1,14 @@
 import { COMPANY_NAME } from '@/constants';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://pugetcapture.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://pugetca.com';
 
 export const siteMetadata = {
   title: COMPANY_NAME,
-  description: 'Your Path to Federal Contracts Starts Here - Expert guidance for GSA Multiple Award Schedule and government contracting success.',
+  description: 'Your Path to Federal Contracts Starts Here – Expert guidance for GSA Schedules and government contracting success.',
   siteUrl: baseUrl,
   ogImage: `${baseUrl}/og-image.jpg`,
-  twitter: {
-    handle: '@PugetCapture',
-    cardType: 'summary_large_image',
+  social: {
+    linkedin: 'https://www.linkedin.com/company/pugetca',
   },
 };
 
@@ -38,12 +37,6 @@ export function generateMetadata(
       ],
       locale: 'en_US',
       type: 'website',
-    },
-    twitter: {
-      card: siteMetadata.twitter.cardType,
-      title: displayTitle,
-      description,
-      images: [siteMetadata.ogImage],
     },
   };
 } 
