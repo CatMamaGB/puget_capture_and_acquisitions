@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     siteName: 'Puget Capture & Acquisition',
     images: [
       {
-        url: '/images/share-logo.png', // Make sure this image exists in your public folder
+        url: '/images/share-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Puget Capture & Acquisition Logo'
-      }
+        alt: 'Puget Capture & Acquisition Logo',
+      },
     ],
     locale: 'en_US',
     type: 'website',
@@ -47,8 +47,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon.svg', type: 'image/svg+xml' }
-    ]
+    ],
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -73,24 +77,14 @@ export default function RootLayout({
             gtag('config', 'G-FSFBG0LJPH');
           `}
         </Script>
-        
-        {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" type="image/png" />
-        
-        {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+        {/* Apple Metadata */}
         <meta name="apple-mobile-web-app-title" content="PCA" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        
-        {/* Web App Manifest */}
+
+        {/* PWA Manifest & Windows */}
         <link rel="manifest" href="/site.webmanifest" />
-        
-        {/* Microsoft Tile */}
         <meta name="msapplication-TileColor" content="#5489a9" />
-        <meta name="msapplication-TileImage" content="/images/favicon-144x144.png" />
         <meta name="theme-color" content="#5489a9" />
       </head>
       <body className={inter.className}>
@@ -100,4 +94,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-} 
+}
