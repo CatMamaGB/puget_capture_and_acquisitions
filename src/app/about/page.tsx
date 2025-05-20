@@ -37,10 +37,15 @@ export default function AboutPage() {
                     <p className="text-evergreen font-medium mb-4 text-center md:text-left">Co-Founder & Federal Acquisition Expert</p>
                     <div className="space-y-4 text-gray-700 text-center md:text-left">
                       <p>
-                        With over 15 years of federal contracting experience, Josh is a leading authority in Multi-Agency Contracts (MACs), GSA Schedules, DoD acquisition, and proposal strategy. He has worked both inside and outside the system, including tenure with the GSA itself — giving him a unique understanding of what it takes to build winning proposals and navigate complex acquisitions.
+                      With over 15 years of experience in federal contracting, Josh is a recognized authority in Multi-Agency Contracts (MACs), GSA Schedules, Department of Defense acquisition, and proposal strategy. 
+                      His background as a U.S. Air Force veteran, combined with roles in the DoD and GSA, gives him a mission-oriented perspective and a rare, insider-level understanding of the federal acquisition process. 
+                      This unique blend of military and civilian expertise allows him to bridge the gap between government expectations and industry capabilities, providing clients with deep insight into the nuances of federal procurement.
                       </p>
                       <p>
-                        Josh leads the technical execution for MAS submissions, renewals, and modifications, guiding clients through each milestone with clarity, compliance, and a proven framework for success. His no-fluff, detail-first approach helps clients feel confident at every step.
+                      In his current role, Josh leads the technical execution of proposal submissions, 
+                      contract renewals, and modifications. He guides clients through each phase with precision, 
+                      compliance, and a structured methodology proven to deliver results. Known for his detail-driven 
+                      and results-focused approach, Josh equips clients with the clarity and confidence needed to succeed in a highly regulated and competitive environment.
                       </p>
                     </div>
                   </div>
@@ -67,7 +72,7 @@ export default function AboutPage() {
                         eye for identifying growth barriers and building the systems needed to scale.
                       </p>
                       <p>
-                        At Puget Capture & Acquisitions, Brianna focuses on client success, business 
+                        At Puget Capture & Acquisition, Brianna focuses on client success, business 
                         optimization, and ensuring every client receives the tools and support to grow 
                         sustainably in both the private and federal space. She's known for her 
                         resourcefulness, empathy, and ability to transform vision into structured momentum.

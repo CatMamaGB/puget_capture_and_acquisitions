@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://your-domain.com'
-  
+  const baseUrl = 'https://pugetca.com'
+
   return [
     {
       url: baseUrl,
@@ -53,4 +53,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ]
-} 
+}

@@ -20,7 +20,14 @@ export function ServiceStructuredData({
     },
     url: 'https://www.pugetca.com/free-consultation',
     areaServed: 'United States',
-    serviceType: 'GSA Contract Consultation'
+    serviceType:[
+    'GSA Contract Consultation',
+    'Contract Management',
+    'Federal Advisory Services',
+    'Federal Contract Management',
+    'GSA Schedule Management',
+    'GSA Schedule Consulting'
+    ]
   };
 
   return (
