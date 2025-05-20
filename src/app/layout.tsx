@@ -82,6 +82,13 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* ✅ Favicon links — required for Google and full browser support */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
         {/* Apple Metadata */}
         <meta name="apple-mobile-web-app-title" content="PCA" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
