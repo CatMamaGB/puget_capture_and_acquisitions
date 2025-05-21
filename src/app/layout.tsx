@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: 'Puget Capture & Acquisition | Federal Contracting Experts',
   description: 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.',
   metadataBase: new URL('https://pugetca.com'),
+  verification: {
+    other: {
+      'msvalidate.01': '8ABD5D5CEAC22CB245001ED86F43BDDE',
+    },
+  },
   openGraph: {
     title: 'Puget Capture & Acquisition',
     description: 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.',
