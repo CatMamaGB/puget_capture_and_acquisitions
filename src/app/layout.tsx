@@ -94,6 +94,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#5489a9" />
         <meta name="theme-color" content="#5489a9" />
         <meta name="next-size-adjust" content="true" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={inter.className}>
         <Navbar />
