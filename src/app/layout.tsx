@@ -91,7 +91,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="msapplication-TileColor" content="#5489a9" />
         <meta name="theme-color" content="#5489a9" />
-        <meta name="next-size-adjust" content="true"/>
+        <meta name="next-size-adjust" content="true" />
       </head>
       <body className={inter.className}>
         <Navbar />

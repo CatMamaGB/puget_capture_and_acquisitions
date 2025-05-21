@@ -25,12 +25,29 @@ export function Footer() {
           <div className="flex flex-col space-y-8 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
             <div className="md:col-span-5 md:col-start-2">
               <div className="flex items-center space-x-3 mb-4">
-                <img
-                  src="/images/logo-icon.png"
-                  alt=""
-                  role="presentation"
-                  className="w-10 h-10"
-                />
+                <div className="relative w-10 h-10">
+                  <Image
+                    src="/images/logo-icon.png"
+                    alt=""
+                    role="presentation"
+                    fill
+                    className="object-contain"
+                    onError={(e) => {
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.querySelector('img')?.classList.add('hidden');
+                        parent.querySelector('span')?.classList.remove('hidden');
+                      }
+                    }}
+                  />
+                  <span
+                    role="img"
+                    aria-label="Puget Capture & Acquisition icon"
+                    className="hidden w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                  >
+                    P
+                  </span>
+                </div>
                 <div>
                   <strong className="block font-bold text-lg text-white">
                     Puget Capture & Acquisition
