@@ -10,6 +10,9 @@ export const siteMetadata = {
   social: {
     linkedin: 'https://www.linkedin.com/company/pugetca',
   },
+  alternates: {
+    canonical: 'https://pugetca.com'
+  },
 };
 
 export function generateMetadata(

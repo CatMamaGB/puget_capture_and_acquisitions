@@ -16,9 +16,9 @@ export function ServiceStructuredData({
       '@type': 'Organization',
       name: 'Puget Capture & Acquisition',
       email: 'info@pugetca.com',
-      url: 'https://www.pugetca.com',
+      url: 'https://pugetca.com',
     },
-    url: 'https://www.pugetca.com/free-consultation',
+    url: 'https://pugetca.com/free-consultation',
     areaServed: 'United States',
     serviceType:[
     'GSA Contract Consultation',

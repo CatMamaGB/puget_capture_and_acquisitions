@@ -17,8 +17,8 @@ export default function HomePage() {
             "@type": "Organization",
             "name": "Puget Capture & Acquisition",
             "description": "Federal consulting services provider",
-            "url": "https://www.pugetca.com",
-            "logo": "https://www.pugetca.com/images/logo-icon.png",
+            "url": "https://pugetca.com",
+            "logo": "https://pugetca.com/images/logo-icon.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "customer service",
