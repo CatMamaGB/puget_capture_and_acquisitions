@@ -26,8 +26,9 @@ export function Footer() {
             <div className="md:col-span-5 md:col-start-2">
               <div className="flex items-center space-x-3 mb-4">
                 <img
-                  alt="Puget Capture & Acquisition Logo Icon"
                   src="/images/logo-icon.png"
+                  alt=""
+                  role="presentation"
                   className="w-10 h-10"
                 />
                 <div>
@@ -53,6 +54,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-fit"
+                  aria-label="Visit our LinkedIn page"
                 >
                   <FaLinkedin className="text-2xl text-gray-400 hover:text-white transition-colors" />
                 </a>
