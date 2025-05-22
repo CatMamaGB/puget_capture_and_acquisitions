@@ -6,6 +6,11 @@ import { CheckIcon } from '@heroicons/react/24/solid'
 import Services from '@/components/Services'
 import { notifyIndexNow } from '@/utils/indexNow';
 
+export const metadata = {
+  title: 'Federal Contracting Services & GSA Schedule Consulting | Puget Capture & Acquisition',
+  description: 'Expert federal contracting services including GSA Schedule consulting, contract management, and federal advisory. Streamline your federal marketplace success.',
+}
+
 export default async function Home() {
   // You can test it here
   try {
@@ -24,13 +29,19 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Puget Capture & Acquisition",
-            "description": "Federal consulting services provider",
+            "description": "Leading provider of federal contracting services, GSA Schedule consulting, and federal marketplace solutions",
             "url": "https://pugetca.com",
             "logo": "https://pugetca.com/images/logo-icon.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "customer service",
               "email": "info@pugetca.com"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://pugetca.com",
+              "name": "Federal Contracting Services",
+              "description": "Comprehensive federal contracting services and consulting"
             }
           })
         }}
@@ -56,7 +67,7 @@ export default async function Home() {
                     Guiding You Through the Federal Marketplace
                   </h1>
                   <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
-                    Backed by 15+ years of acquisition expertise, we streamline the entire process—from capture strategy to post-award support.
+                    Expert guidance through federal contracting, GSA Schedule applications, and contract management—backed by 15+ years of acquisition expertise.
                   </p>
                 </div>
               </div>

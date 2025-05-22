@@ -1,12 +1,45 @@
-'use client';
-
 import React from 'react';
+import Script from 'next/script';
 import { Section } from '@/components/ui/Section';
-import { FaLinkedin } from 'react-icons/fa';
+import { metadata } from './metadata' 
+
+export { metadata }
 
 export default function AboutPage() {
   return (
     <>
+      <Script
+        id="about-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Puget Capture & Acquisition",
+            "url": "https://pugetca.com/about",
+            "description": "Meet the founders behind Puget Capture & Acquisition: Josh Houseworth and Brianna Pirro.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Puget Capture & Acquisition",
+              "member": [
+                {
+                  "@type": "Person",
+                  "name": "Josh Houseworth",
+                  "jobTitle": "Co-Founder & Federal Acquisition Expert",
+                  "description": "15+ years of experience in federal contracting, U.S. Air Force veteran with DoD and GSA experience"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Brianna Pirro",
+                  "jobTitle": "Co-Founder & Small Business Strategist",
+                  "description": "Decade of experience supporting small and medium-sized businesses across industries"
+                }
+              ]
+            }
+          })
+        }}
+      />
+
       <Section className="bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">

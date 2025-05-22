@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from './ui/Container';
+import LinkedInIcon from './ui/LinkedInIcon'; 
 
 // Define the company name directly in the component for now
 const COMPANY_NAME = 'Puget Capture & Acquisition';
@@ -20,7 +20,7 @@ const navigation = {
 export function Footer() {
   return (
     <footer className="bg-[#0c1b39] text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="py-8 max-w-6xl mx-auto">
           <div className="flex flex-col space-y-8 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
             <div className="md:col-span-5 md:col-start-2">
@@ -73,7 +73,7 @@ export function Footer() {
                   className="w-fit"
                   aria-label="Visit our LinkedIn page"
                 >
-                  <FaLinkedin className="text-2xl text-gray-400 hover:text-white transition-colors" />
+                  <LinkedInIcon />
                 </a>
               </div>
             </div>
@@ -112,7 +112,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 } 
