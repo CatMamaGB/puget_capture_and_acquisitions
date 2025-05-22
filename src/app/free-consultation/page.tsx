@@ -2,7 +2,6 @@
 
 import { CheckCircle } from 'lucide-react';
 import { ServiceStructuredData } from '@/components/StructuredData';
-import { COMPANY_NAME } from '@/constants';
 import dynamic from 'next/dynamic';
 
 // Update the dynamic import

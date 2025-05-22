@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
-import { CONTACT_EMAIL } from '@/constants';
 
 export default function ContactPage() {
   const [error, setError] = useState('');
