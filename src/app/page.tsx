@@ -2,11 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Container } from '@/components/ui/Container';
-import { CheckIcon } from '@heroicons/react/24/solid'
 import Services from '@/components/Services'
 
 export const metadata = {
-  title: 'Federal Contracting Services & GSA Schedule Consulting | Puget Capture & Acquisition',
+  title: 'Puget Capture & Acquisition | Federal Contract Services',
   description: 'Expert federal contracting services including GSA Schedule consulting, contract management, and federal advisory. Streamline your federal marketplace success.',
 }
 
