@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Puget Capture & Acquisition | Federal Contracting Experts',
+  title: 'Puget Capture & Acquisition | Federal Contract Services',
   description: 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.',
   metadataBase: new URL('https://pugetca.com'),
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Puget Capture & Acquisition',
+    title: 'Puget Capture & Acquisition | Federal Contract Services',
     description: 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.',
     url: 'https://pugetca.com',
     siteName: 'Puget Capture & Acquisition',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Puget Capture & Acquisition',
+    title: 'Puget Capture & Acquisition | Federal Contract Services',
     description: 'Helping companies confidently navigate the federal marketplace.',
     images: [{
       url: '/images/share-logo.png',
