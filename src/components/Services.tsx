@@ -10,8 +10,8 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, description, href, icon }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition flex flex-col h-full">
-      <div className="text-blue-600 mb-4">
+    <article className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition flex flex-col h-full">
+      <div className="text-blue-600 mb-4" aria-hidden="true">
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
@@ -19,10 +19,11 @@ function ServiceCard({ title, description, href, icon }: ServiceCardProps) {
       <Link 
         href={href}
         className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-center"
+        aria-label={`Learn more about ${title}`}
       >
         Learn More
       </Link>
-    </div>
+    </article>
   );
 }
 
@@ -49,9 +50,17 @@ export default function Services() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto py-16 px-6">
+    <section 
+      className="max-w-7xl mx-auto py-16 px-6"
+      aria-labelledby="services-heading"
+    >
       <div className="max-w-3xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <h2 
+          id="services-heading" 
+          className="text-4xl font-bold text-gray-900 mb-4"
+        >
+          Our Services
+        </h2>
         <p className="text-lg text-gray-700">
           Comprehensive support for your federal contracting journey, from initial market 
           entry to long-term growth and compliance.
