@@ -1,10 +1,9 @@
-import React from 'react';
-import type { Metadata, Viewport } from 'next';
+import '@/styles/globals.css';  
 import { Inter } from 'next/font/google';
+import { Metadata, Viewport } from 'next';
+import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CalendlyScript } from '@/components/CalendlyScript';
-import '@/styles/globals.css';
-import { Navbar } from '@/components/Navbar';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,6 +18,9 @@ export const metadata: Metadata = {
   title: 'Puget Capture & Acquisition | Federal Contracting Experts',
   description: 'Helping companies confidently navigate the federal marketplace through GSA Schedules, contract management, and strategic guidance.',
   metadataBase: new URL('https://pugetca.com'),
+  alternates: {
+    canonical: '/',
+  },
   verification: {
     other: {
       'msvalidate.01': '8ABD5D5CEAC22CB245001ED86F43BDDE',
@@ -67,11 +69,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -89,10 +87,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        
-        {/* iOS & Windows Meta Tags */}
         <meta name="apple-mobile-web-app-title" content="PCA" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
