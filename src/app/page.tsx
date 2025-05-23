@@ -4,7 +4,6 @@ import Script from 'next/script';
 import { Container } from '@/components/ui/Container';
 import { CheckIcon } from '@heroicons/react/24/solid'
 import Services from '@/components/Services'
-import { notifyIndexNow } from '@/utils/indexNow';
 
 export const metadata = {
   title: 'Federal Contracting Services & GSA Schedule Consulting | Puget Capture & Acquisition',
@@ -12,13 +11,6 @@ export const metadata = {
 }
 
 export default async function Home() {
-  // You can test it here
-  try {
-    await notifyIndexNow('https://pugetca.com/services/contract-management');
-  } catch (error) {
-    console.error('Failed to notify IndexNow:', error);
-  }
-
   return (
     <>
       <Script

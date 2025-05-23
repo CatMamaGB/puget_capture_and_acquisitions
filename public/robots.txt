@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pugetca.com
+Host: https://example.com
 
 # Sitemaps
-Sitemap: https://pugetca.com/sitemap.xml
+Sitemap: https://example.com/sitemap.xml

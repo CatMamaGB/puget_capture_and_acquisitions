@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://pugetca.com',
+  siteUrl: process.env.SITE_URL || 'https://example.com',
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
