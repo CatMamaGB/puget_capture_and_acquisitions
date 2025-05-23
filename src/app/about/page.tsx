@@ -2,6 +2,7 @@ import React from 'react';
 import Script from 'next/script';
 import { Section } from '@/components/ui/Section';
 import { metadata } from './metadata' 
+import Image from 'next/image';
 
 export { metadata }
 
@@ -59,9 +60,11 @@ export default function AboutPage() {
               <div className="bg-fogGray bg-opacity-5 p-8 rounded-lg">
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
-                    <img 
+                    <Image 
                       src="/images/josh-headshot.jpg"
-                      alt="Josh Houseworth"
+                      alt="Josh Houseworth - Co-Founder & Federal Acquisition Expert at Puget Capture & Acquisition"
+                      width={400}
+                      height={400}
                       className="w-full rounded-lg border-2 border-fogGray"
                     />
                   </div>
@@ -88,9 +91,11 @@ export default function AboutPage() {
               <div className="bg-fogGray bg-opacity-5 p-8 rounded-lg">
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
-                    <img 
+                    <Image 
                       src="/images/brianna-headshot.jpg"
-                      alt="Brianna Pirro"
+                      alt="Brianna Pirro - Co-Founder & Small Business Strategist at Puget Capture & Acquisition"
+                      width={400}
+                      height={400}
                       className="w-full rounded-lg border-2 border-fogGray"
                     />
                   </div>

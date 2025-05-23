@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: '/images/share-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Puget Capture & Acquisition Logo',
+        alt: 'Puget Capture & Acquisition - Federal Contracting and GSA Schedule Consulting Services',
       },
     ],
     locale: 'en_US',
@@ -46,7 +46,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Puget Capture & Acquisition',
     description: 'Helping companies confidently navigate the federal marketplace.',
-    images: ['/images/share-logo.png'],
+    images: [{
+      url: '/images/share-logo.png',
+      alt: 'Puget Capture & Acquisition - Federal Contracting and GSA Schedule Consulting Services'
+    }],
   },
   robots: {
     index: true,

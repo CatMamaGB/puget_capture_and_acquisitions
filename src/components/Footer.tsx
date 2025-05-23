@@ -28,8 +28,7 @@ export function Footer() {
                 <div className="relative w-10 h-10">
                   <Image
                     src="/images/logo-icon.png"
-                    alt=""
-                    role="presentation"
+                    alt="Puget Capture & Acquisition Logo"
                     fill
                     className="object-contain"
                     onError={(e) => {
