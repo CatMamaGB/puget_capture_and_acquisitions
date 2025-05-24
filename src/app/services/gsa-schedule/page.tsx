@@ -3,6 +3,7 @@ import { CheckIcon } from '@heroicons/react/24/solid'
 import { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import Script from 'next/script'
+import { COMPANY_NAME, COMPANY_URL } from '@/constants'
 
 const features = [
   'GSA Schedule Eligibility Review',
@@ -20,6 +21,25 @@ const benefits = [
 export default function GSASchedulePage() {
   return (
     <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "GSA Schedule Services",
+            "provider": {
+              "@type": "Organization",
+              "name": COMPANY_NAME
+            },
+            "description": "Expert guidance through GSA Schedule preparation, submission, and maintenance. We help you navigate the complex process with confidence.",
+            "url": `${COMPANY_URL}/services/gsa-schedule`,
+            "areaServed": "United States",
+            "serviceType": "GSA Schedule Consulting"
+          })
+        }}
+      />
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -147,10 +167,17 @@ export default function GSASchedulePage() {
 }
 
 export const metadata: Metadata = {
-  title: 'GSA Schedule Consulting Services',
+  title: `GSA Schedule Consulting Services | ${COMPANY_NAME}`,
   description: 'Expert GSA Schedule consulting services to help you navigate the GSA Schedule application process, maintain compliance, and maximize your contract success.',
   openGraph: {
-    title: 'GSA Schedule Consulting Services',
+    title: `GSA Schedule Consulting Services | ${COMPANY_NAME}`,
     description: 'Expert GSA Schedule consulting services to help you navigate the GSA Schedule application process.',
+    type: 'website',
+    url: `${COMPANY_URL}/services/gsa-schedule`,
+    siteName: COMPANY_NAME,
+    locale: 'en_US',
+  },
+  alternates: {
+    canonical: `${COMPANY_URL}/services/gsa-schedule`
   }
 } 

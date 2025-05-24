@@ -1,8 +1,8 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { IconBriefcase, IconClipboardCheck, IconCompass } from '@tabler/icons-react';
+import type { Metadata } from 'next';
+import Script from 'next/script';
 
 interface ServiceCardProps {
   title: string;
@@ -29,6 +29,11 @@ function ServiceCard({ title, description, href, icon }: ServiceCardProps) {
   );
 }
 
+export const metadata: Metadata = {
+  title: 'Federal Contracting Services | Puget Capture & Acquisition',
+  description: 'Comprehensive federal contracting services including GSA Schedule Services, Contract Management, and Federal Advisory Services to help your business succeed in the federal marketplace.',
+};
+
 export default function ServicesPage() {
   const services = [
     {
@@ -52,23 +57,59 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="max-w-7xl mx-auto py-16 px-6">
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h1>
-        <p className="text-lg text-gray-700">
-          Comprehensive support for your federal contracting journey, from initial market 
-          entry to long-term growth and compliance.
-        </p>
-      </div>
+    <>
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "Service",
+                "position": 1,
+                "name": "GSA Schedule Services",
+                "description": "Expert guidance through GSA Schedule preparation, submission, and maintenance.",
+                "url": "https://pugetca.com/services/gsa-schedule"
+              },
+              {
+                "@type": "Service",
+                "position": 2,
+                "name": "Contract Management Services",
+                "description": "Comprehensive support for federal contract compliance and optimization.",
+                "url": "https://pugetca.com/services/contract-management"
+              },
+              {
+                "@type": "Service",
+                "position": 3,
+                "name": "Federal Advisory Services",
+                "description": "Strategic guidance for success in the federal marketplace.",
+                "url": "https://pugetca.com/services/federal-advisory"
+              }
+            ]
+          })
+        }}
+      />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => (
-          <ServiceCard 
-            key={service.href}
-            {...service}
-          />
-        ))}
-      </div>
-    </main>
+      <main className="max-w-7xl mx-auto py-16 px-6">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h1>
+          <p className="text-lg text-gray-700">
+            Comprehensive support for your federal contracting journey, from initial market 
+            entry to long-term growth and compliance.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard 
+              key={service.href}
+              {...service}
+            />
+          ))}
+        </div>
+      </main>
+    </>
   );
 } 

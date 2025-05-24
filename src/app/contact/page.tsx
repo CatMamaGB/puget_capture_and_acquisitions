@@ -1,39 +1,48 @@
-'use client';
-
-import React, { useState } from 'react';
 import { Section } from '@/components/ui/Section';
-import { ContactForm } from '@/components/ContactForm';
+import { ContactFormSection } from './ContactFormSection';
+import Script from 'next/script';
+import { COMPANY_NAME, COMPANY_URL } from '@/constants';
 
 export default function ContactPage() {
-  const [error, setError] = useState('');
-  
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError('');
-    
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          // your form data
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-      
-      // Handle success
-    } catch (err) {
-      setError('Failed to send message. Please try again later.');
-    }
-  };
-  
   return (
     <>
+      <Script
+        id="contact-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": `Contact ${COMPANY_NAME}`,
+            "url": `${COMPANY_URL}/contact`,
+            "description": "Get in touch with our federal contracting experts. We help businesses navigate the federal marketplace successfully.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": COMPANY_NAME,
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "info@pugetca.com",
+                "availableLanguage": "English",
+                "areaServed": "United States"
+              }],
+              "potentialAction": {
+                "@type": "ContactAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": `${COMPANY_URL}/contact`,
+                  "inLanguage": "en-US",
+                  "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                  ]
+                }
+              }
+            }
+          })
+        }}
+      />
+      
       <Section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-5xl font-bold text-deepNavy mb-6 text-center">Contact Us</h1>
@@ -41,29 +50,7 @@ export default function ContactPage() {
             Ready to explore federal contracting opportunities? Get in touch with our team.
           </p>
 
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-start mt-12">
-            <div className="bg-gray-50 p-8 rounded-xl shadow-md flex-1 max-w-2xl">
-              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Send Us a Message</h2>
-              <ContactForm />
-            </div>
-
-            <div className="md:w-64">
-              <h2 className="text-2xl font-semibold text-deepNavy mb-4">Contact Our Team</h2>
-              <div className="space-y-4">
-                <div>
-                  <a 
-                    href="mailto:info@pugetca.com"
-                    className="text-pugetBlue hover:text-deepNavy transition-colors text-lg"
-                  >
-                    info@pugetca.com
-                  </a>
-                  <p className="text-gray-600 mt-2">
-                    We typically respond within 24 business hours.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ContactFormSection />
         </div>
       </Section>
     </>

@@ -150,5 +150,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Federal Advisory Services',
     description: 'Expert federal advisory services helping organizations navigate complex federal regulations and compliance requirements.',
+  },
+  alternates: {
+    canonical: 'https://pugetca.com/services/federal-advisory'
   }
 } 

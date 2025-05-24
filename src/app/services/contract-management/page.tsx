@@ -149,5 +149,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contract Management Services',
     description: 'Professional contract management services to help federal contractors maintain compliance and optimize contract performance.',
+  },
+  alternates: {
+    canonical: 'https://pugetca.com/services/contract-management'
   }
 } 
